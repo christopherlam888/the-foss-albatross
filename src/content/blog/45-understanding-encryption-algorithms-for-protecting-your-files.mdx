@@ -1,0 +1,78 @@
+---
+title: 'Understanding Encryption Algorithms For Protecting Your Files'
+description: 'Welcome to The FOSS Albatross, a blog focused on building exposure around free and open-source software!'
+pubDate: 'May 06 2022'
+heroImage: '../../assets/images/0-welcome-to-the-foss-albatross-1.webp'
+category: 'Linux'
+tags: ['', '', '', '', '']
+---
+
+Understanding Encryption Algorithms For Protecting Your Files
+
+In today’s highly digitized world, data is the most valuable resource. You need to protect your most important data and defend against those who will use that data against you!
+
+Your financial, legal, and medical documents contain information about the most sensitive parts of your life. Should these documents get into the wrong hands, the data can be used to criminals to steal your identity, corporations to manipulate your purchases, and governments to control your behaviour!
+
+Here is what you need to know about encryption and how you can use it to protect your files.
+
+Symmetric Key Encryption
+
+Encryption algorithms are either symmetric or asymmetric, which refers to the nature of the keys used to encrypt and decrypt data. Symmetric key encryption uses the same key for both encryption and decryption while asymmetric key encryption uses different keys for encryption and decryption.
+
+First, the sender encrypts the plaintext data into ciphertext using an encryption key and an encryption algorithm. This key can be generated from a password by a KDF (Key Derivation Function).
+
+Then, the ciphertext is sent to the receiver who then decrypts it into plaintext using the same encryption key, and the data can be accessed!
+
+Symmetric key encryption is generally faster than asymmetric encryption since it involves using the same key for both encryption and decryption. Due to this efficiency advantage, symmetric key encryption is typically used for large amount of data such as for file and disk encryption.
+
+However, symmetric encryption does require the encryption key to be somehow securely shared between the sender and the receiver. As such, an asymmetric encryption algorithm can be used first to generate and share an encryption key that can then be used for a symmetric encryption algorithm.
+
+All the encryption algorithms described in this article use symmetric key encryption. Keep watch for future articles to learn more about other encryption algorithms, such as those used in network traffic and end-to-end encrypted communication!
+
+AES: The Gold Standard
+
+In the 1970s, IBM developed DES (Data Encryption Standard). This encryption algorithm was standardized by the National Bureau of Standards and was the generally accepted algorithm for encrypting data,
+
+DES used a 56-bit symmetric key along with a method known as block cipher encryption.
+
+Block cipher encryption divides the plaintext data into a series of blocks of fixed size and performs encryption on each block.
+
+In combination with the symmetric key, an IV (Initialization Vector) is used to encrypt the first block. The IV is a random number used to strengthen the encryption by adding randomness. This randomness is added to the encryption of the first block by applying an XOR operation between the plaintext block and the IV. Next, the block is encrypted using the symmetric key.
+
+Then, the randomness is carried through the blocks as the previously encrypted block is essentially used as the IV for the next block. An XOR operation is applied between the next plaintext block and the previously encrypted block. Next, the block is encrypted using the symmetric key, and this process continues for all subsequent blocks. This process is called CBC (Cipher Block Chaining).
+
+The encrypted data and the encrypted IV are stored on a disk. The symmetric key can be used to decrypt the IV, which can then be used along with the symmetric key to decrypt the data.
+
+Block cipher encryption has many benefits including improved security as well as improved efficiency since the data to be encrypted is divided into multiple blocks of fixed size instead of plaintext of an unknown size.
+
+DES used a block size of 64 bits.
+
+However, DES was broken by the Electronic Frontier Foundation (EFF) in 1999 by brute-forcing keys. As such, a stronger encryption algorithm needed to be developed.
+
+AES (Advanced Encryption Standard) was chosen to replace DES. AES uses block cipher encryption while featuring stronger keys with 128, 192, and 256 bit versions as well as a larger block size of 128 bits.
+
+The main benefit is the larger key size. A 128 bit key has 2^128 possibilities, which is significantly more than 2^56 possibilities for a 56 bit key used in DES. For even stronger encryption for applications that require a larger security margin, a 192 bit key has 2^192 possibilities and a 256 bit key has 2^256 possibilities. These aren’t going to be brute-forced anytime soon!
+
+Until today, no significant attacks against AES have been found, and it is still the gold standard for encryption.
+
+Comparing Encryption Algorithms
+
+AES is just the one encryption algorithm that has been chosen as the standard and so widely adopted. There are many other encryption algorithms that have their own strengths and weaknesses compared to AES!
+
+Serpent is known for its high security with key sizes of 128, 192, or 256 bits and a block size of 128 bits. Serpent also has more rounds than AES, which refers to the number of times the encryption algorithm runs on the data. Serpent is a strong choice for encrypting highly sensitive data. However, Serpent is also slower than AES. Serpent was a finalist in the AES competition.
+
+Twofish is fast and secure with key sizes of 128, 192, or 256 bits and a block size of 128 bits. Twofish has a fixed number of rounds of 16 compared to the variable number of rounds used in AES and Serpent depending on the key size. Twofish is a good choice for encrypting data with a large key size that needs to be transferred quickly. Twofish was also a finalist in the AES competition.
+
+Camellia is the encryption algorithm standardized in Japan.
+
+Kuznyechik is the encryption algorithm developed by the FSB and used in Russian government applications.
+
+The specific details of the logical and mathematical operations performed in each encryption algorithm are beyond the scope of this article, but all these encryption algorithms are considered secure for an average person’s threat model.
+
+How To Encrypt Your Files!
+
+The easiest way to encrypt your files or disks is with software such as VeraCrypt! VeraCrypt is a free and open source application. You can install VeraCrypt here [https://www.veracrypt.fr/code/VeraCrypt/] and follow the prompts in the GUI to start encrypting!
+
+You can easily choose your files or disks to encrypt as well as the details of your encryption, such as which algorithm you would like to use and what password you would like to set.
+
+Using VeraCrypt is a great way to store your sensitive data, such as financial, legal, and medical documents, in a secure and offline manner of which you have complete control!

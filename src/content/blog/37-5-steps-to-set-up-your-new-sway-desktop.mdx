@@ -1,0 +1,134 @@
+---
+title: '5 Steps To Set Up Your New Sway Desktop'
+description: 'Welcome to The FOSS Albatross, a blog focused on building exposure around free and open-source software!'
+pubDate: 'May 06 2022'
+heroImage: '../../assets/images/0-welcome-to-the-foss-albatross-1.webp'
+category: 'Linux'
+tags: ['', '', '', '', '']
+---
+
+5 Steps To Set Up Your New Sway Desktop
+
+So you want to get started using the Sway tiling window manager! Unfortunately, many of the functions we often take for granted don’t work right out of the box on a vanilla installation. Here are 5 essential steps to help you set up your new Sway desktop!
+
+Keybindings
+
+Take full advantage of using a tiling window manager by setting your keybindings!
+
+You can configure your Sway setup in a config file. Get started by creating a directory for the config file:
+
+mkdir -p ~/.config/sway
+
+Copy the default config file to your config directory:
+
+cp /etc/sway/config ~/.config/sway/
+
+Now, you can edit the file ~/.config/sway/config with your favourite editor!
+
+The default config includes many keybindings which can be identified by the keyword bindsym followed by a combination of keys. Next is the exec keyword followed by the command to be run.
+
+You can edit the existing keybindings and write your own to suit your unique workflow!
+
+Some of my most used keybindings include $mod+Return for a terminal, $mod+d for dmenu, $mod+w for LibreWolf, $mod+b for Brave, $mod+n for Nautilus, and $mod+p for Proton VPN. Of course, there are many keybindings for switching windows and workspaces plus many other tasks as well.
+
+Bar
+
+The default top bar in Sway is Swaybar and it is quite plain and lacklustre. Of course, you can customize Swaybar to your liking, but the ease with which you can customize it as well as the extent to which you can do so is limited.
+
+Instead, try installing Waybar!
+
+To get started with Waybar, you need to comment out the existing bar in your Sway config and add the following line instead:
+
+bar swaybar_command waybar
+
+The default Waybar config is quite feature-packed and colourful. But, you can customize it even more to your liking! The content of the bar can be configured in /etc/xdg/waybar/config and the style can be configured in /etc/xdg/waybar/style.css.
+
+You can change display info, format, font, colour, and so much more!
+
+Learn about all you can do with Waybar in the wiki here. https://github.com/Alexays/Waybar/wiki
+
+Volume Control
+
+If you want to listen to music or watch videos with your new setup, you need to be able to control your volume!
+
+You can install pactl if you don’t have it already to control your volume.
+
+To increase your volume by 10%:
+
+pactl set-sink-volume @DEFAULT_SINK@ +10%
+
+To decrease your volume by 10%:
+
+pactl set-sink-volume @DEFAULT_SINK@ -10%
+
+To toggle mute:
+
+pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+You can use your keyboard’s volume control keys to execute these commands by adding the following in your Sway config file:
+
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +10%
+
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -10%
+
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+Feel free to change the increment and decrement percentages depending on your liking!
+
+Brightness Control
+
+Depending on whether you’re working in bright or low-light conditions, you may want to adjust your screen’s brightness.
+
+You can install brightnessctl if you don’t have it already to control your screen’s brightness using commands.
+
+To increase your brightness by 10%:
+
+brightnessctl s +10%
+
+To decrease your brightness by 10%:
+
+brightnessctl s 10%-
+
+You can use your keyboard’s brightness control keys to execute these commands by adding the following in your Sway config file:
+
+bindsym XF86MonBrightnessUp exec brightnessctl s +10%
+
+bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
+
+If you need sudo privileges to run brightnessctl on your system, then just add the sudo keyword to the beginning of your commands. However, your Sway config cannot run commands that require your password input, so you’ll need to allow brightnessctl to run without requiring a password.
+
+Edit your sudoers file with the command sudo visudo. Then, add the following line, replacing “user” with your username:
+
+user ALL = NOPASSWD: /bin/brightnessctl
+
+Screenshot
+
+Unfortunately, taking a screenshot in Sway is not nearly as simple as opening an application and following the GUI like in most desktop environments. But here is how you can write a simple script to make it essentially that easy!
+
+First, you’ll need to install a few tools if you don’t have them already. Use grim, a screenshot tool for Wayland, and slurp, a tool to select an area on your screen.
+
+Next, choose a directory on your PATH to place your script, for example /usr/local/bin. To check what directories are on your PATH, use the following command:
+
+echo $PATH
+
+At this stage, you’re ready to write your script! In the directory of your choice, create a new bash script file such as screenshot.sh and paste the following code:
+
+#!/bin/bash
+
+FILENAME=“screenshot-`date +%F-%T`”
+
+grim -g “$(slurp)” ~/Downloads/$FILENAME.png
+
+Feel free to change the filename and the location to save your screenshot.
+
+Make sure your script is executable by running the following command:
+
+sudo chmod +x screenshot.sh
+
+Now, you can easily take screenshots by running this script from dmenu!
+
+More!
+
+There are nearly limitless possibilities to customize your setup beyond these 5 simple steps! Check out the Sway wiki here. https://github.com/Alexays/Waybar/wiki
+
+Feel free to share your setup and your favourite config steps in the comments!

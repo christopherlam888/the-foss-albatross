@@ -1,0 +1,80 @@
+---
+title: 'How To Debloat Your Android Device'
+description: 'Welcome to The FOSS Albatross, a blog focused on building exposure around free and open-source software!'
+pubDate: 'May 06 2022'
+heroImage: '../../assets/images/0-welcome-to-the-foss-albatross-1.webp'
+category: 'Linux'
+tags: ['', '', '', '', '']
+---
+
+How To Debloat Your Android Device
+
+It’s a special occasion and you want to commemorate it with a group photo! You take your phone out to take that photo, but you’ve just realized you’re out of space!
+
+Every mainstream Android device comes with a whole suite of extra apps and packages that you cannot uninstall! On some devices like Samsung phones, you get Google apps, Microsoft apps, and Samsung apps. No wonder you’re out of storage!
+
+These pre-loaded apps are an attempt by manufacturers to force you using their services and trap you in their ecosystem. But you may not need most of these apps, so they’re just cluttering up your app screen, hence the name “bloat.”
+
+You can free up hundreds of MB by using Android Debug Bridge (ADB) to debloat your Android device! It’s time to say goodbye to all those useless apps on your phone and get back to taking more pictures!
+
+Setting Up Your Computer
+
+You’ll need to install ADB on your computer to run commands for debloating. ADB provides a variety of tools you can use to test Android devices, so debloating is really just the tip of the iceberg!
+
+On Linux with the apt package manager, you can run the following command:
+
+sudo apt install android-tools-adn android-tools-fastboot
+
+Setting Up Your Device
+
+You’ll also need to enable Developer options so you can control your phone using commands on your computer. Find your Build Number in Settings and tap it until you enable Developer Options. Then, switch on the toggle for USB Debugging.
+
+Now, you can connect your device to your computer via an appropriate data transfer USB cable.
+
+Type the following command to get started with ADB on your device.
+
+adb devices
+
+A dialog should appear on your device for your to confirm the connection.
+
+Bye Bye Bloat!
+
+You can explore all the apps and packages on your device by typing the following command:
+
+adb shell pm list packages
+
+You can also look for specific packages using a pipe and the grep command:
+
+adb shell pm list packages | grep samsung
+
+Choose a a package you want to uninstall, like Amazon Shopping with package name com.amazon.mShop.android.shopping which takes up hundreds of MB of storage space. Then, simply run the following command:
+
+adb uninstall com.amazon.mShop.android.shopping
+
+In some cases, manufacturer apps are installed as root so you’ll get an error if you try to run a simple uninstall command. Instead, try using the following command:
+
+adb shell pm uninstall --user 0 com.amazon.mShop.android.shopping
+
+Success! You’ve uninstalled a useless piece of bloat.
+
+But how did I know that com.amazon.mShop.android.shopping is Amazon Shopping?
+
+There are a few tricks you can use to figure out which package corresponds to which app! Sometimes the app name will be in the package name, in which case identifying the app is easy.
+
+However, for other apps, you may need do some research online for a list of manufacturer apps and packages as well as their package names.
+
+If there’s a specific app you would like to uninstall, you can go to the Google Play Store and search for the app name. The URL of the app page contains its package name!
+
+Be careful about what packages you uninstall though! Some packages are actually essential for your device’s functionality. This is especially true for Google packages since most mainstream version of Android are based on Google’s version.
+
+Think about whether an app or package might be important before uninstalling it. For example, apps by Facebook, Amazon, Microsoft, and your ISP are generally safe to uninstall. In fact, I highly recommend you start with these!
+
+However, you may want to think twice about uninstalling an app or package by Google or Samsung since those might provide important features for your OS.
+
+Limitations
+
+Although removing apps with ADB does give you some power back, ADB does have its limitations. For starters, you may notice that there are some apps you cannot uninstall or even disable.
+
+Manufacturers really don’t want you removing their apps, so they take special measures at the OS level to prevent you from taking control. With ADB, at least you can free up some space for the apps you can uninstall, although in many cases the files for installation will remain on your phone, and you can clear up your app screen by disabling others.
+
+I recommend using a different OS altogether for your device. If you have more technical knowledge, you can install a custom ROM such as Graphene OS or Lineage OS, which are based on Android Open Source Project (AOSP) and ship without manufacturer apps. With custom ROMs, you can retake control of your phone and customize it your liking! Stay tuned to The FOSS Albatross to learn more!

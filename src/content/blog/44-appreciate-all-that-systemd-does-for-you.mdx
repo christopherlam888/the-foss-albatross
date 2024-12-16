@@ -1,0 +1,62 @@
+---
+title: 'Appreciate All That Systemd Does For You'
+description: 'Welcome to The FOSS Albatross, a blog focused on building exposure around free and open-source software!'
+pubDate: 'May 06 2022'
+heroImage: '../../assets/images/0-welcome-to-the-foss-albatross-1.webp'
+category: 'Linux'
+tags: ['', '', '', '', '']
+---
+
+Appreciate All That systemd Does For You
+
+If you’ve ever used Linux, you’ve probably heard of systemd. But do you have any idea what systemd does?
+
+In fact, systemd is a critical part of Linux systems! It’s a piece of software called an init system, which manages all your system’s services and processes as well as startup and shutdown.
+
+Init Systems
+
+Init systems perform many core functions!
+
+To start, your init system manages your system services, such as applications other daemons. Your init system runs all of these services while you’re enjoying your desktop, and of course it handles startup and shutdown as well.
+
+Meanwhile, your init system allocates your system resources, such as CPU usage, memory, and network bandwidth. Your init system helps you run multiple services at a time while keeping a smooth experience!
+
+Finally, your init system handles unexpected system events like crashes, errors, and hardware failures. Without your init system, your system would have no idea what to do with these sudden occurrences!
+
+Thanks, systemd!
+
+Before systemd, most Linux systems used an init system called SysVinit, which consists of a bunch of shell scripts to manage services and processes.
+
+The problem was SysVinit is limited in its capabilities.
+
+SysVinit’s combination of shell scripts is not very good at handling a large number of services and processes, which can significantly slow down a system. Also, if you want any custom configuration for your system, you’ll need to write long and complex scripts. To make matters worse, SysVinit has no native logging, which makes troubleshooting very challenging!
+
+Thanks to systemd, we now have a standardized way of managing systems and processes!
+
+Your Linux system uses systemd to more efficiently manage applications and other daemons as well as allocate system resources. Also, systemd has improved methods of performing startup and shutdown activities. This optimization is possible by systemd taking advantage of parallelism.
+
+Additionally, systemd includes functionality for networking, power management, and mounting physical devices.
+
+Thanks to systemd, we also have informative native logging and a multitude of useful commands to manage your system!
+
+Besides, systemd goes even further by working alongside your login manager to manage your user sessions. Your init system makes sure your user environments are set up properly and ready for your login. Also, your init system makes sure everything terminates properly on logout.
+
+Overall, systemd has made Linux systems more efficient and easier to manage, which is why it has become the default init system in most Linux distributions!
+
+Although, note that some Linux enthusiasts still prefer to use SysVinit or other init systems so they can have better control over their systems and write configurations to their liking. There still remains a heated debate in the Linux community over whether systemd is trying to cover too many bases at once as opposed to doing one thing and doing it well.
+
+systemd Commands
+
+Here are some systemd commands you can try out!
+
+systemctl status <service> gives you the status of a specific service.
+
+You can also manage a specific service yourself with the start, stop, and restart commands.
+
+To configure a service to automatically start at startup, you can use the enable command.
+
+systemd-analyze shows you performance statistics for your startup time.
+
+journalctl displays the systemd logs including system messages, kernel messages, and application logs.
+
+To learn about systemd in-depth, check out their website here!

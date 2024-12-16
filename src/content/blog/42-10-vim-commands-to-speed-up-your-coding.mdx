@@ -1,0 +1,86 @@
+---
+title: '10 Vim Commands To Speed Up Your Coding'
+description: 'Welcome to The FOSS Albatross, a blog focused on building exposure around free and open-source software!'
+pubDate: 'May 06 2022'
+heroImage: '../../assets/images/0-welcome-to-the-foss-albatross-1.webp'
+category: 'Linux'
+tags: ['', '', '', '', '']
+---
+
+10 Vim Commands To Speed Up Your Coding
+
+Vim is an amazing text editor that really boosts your productivity once you learn it! Many Linux users are intimidated by the high barrier to entry of learning all the commands, but I promise you that it is well worth your time if you do a lot of coding!
+
+Here are my 10 favourite Vim commands to speed up coding. Once you learn them, you will never be able to go back to using any other text editor!
+
+1. o - Open New Line
+
+Let’s start with a simple command! You can open a new line below your selected line by pressing the o command, and it will automatically switch you to insert mode!
+
+Likewise, you can type the O command to open a new line above your selected line.
+
+2. r - Replace
+
+Fixing typos is easy with the replace command. Just hover over the character you would like to change, and press the r command followed by the character you want to use instead!
+
+3. c - Change
+
+What if you want to change more than just a single character? Use the change command, and you can automatically delete what you want and enter insert mode to type something new!
+
+Use cw to change a word. You can also use c$ to change until the end of a line or c^ to change until the beginning of a line.
+
+4. d - Delete
+
+Deleting is super simple in Vim! Using dd is a fast way to delete a line, and add the number of lines you want to delete at the beginning of the command.
+
+Similarly to the change command, you can use dw to delete a word, d$ to delete until the end of a line, and d^ to delete until the beginning of a line.
+
+5. u, Ctrl+r - Undo, Redo
+
+Two of the most common keybindings with anything editing-related are Ctrl+z to undo and and Ctrl+y to redo. Of course, Vim has equivalent commands for these, and I find them even more convenient!
+
+Type u to undo your last edit, and keep pressing to continue going backwards in your history.
+
+Conversely, you can type Ctrl+r to redo if you undo too far.
+
+6. y, p - Yank, Put
+
+Two more of the most common keybindings are Ctrl+c and Ctrl+v, which are of course to copy and paste! Instead, Vim has even better versions of these!
+
+You can use the yank command with yy to copy an entire line. You can also copy multiple lines by adding the number of lines you want to copy to the beginning of the command.
+
+To copy a single word, you can use yiw to copy without its trailing white space and yaw to copy with its trailing white space.
+
+The put command is even better! Not only does it put the content you yank, but also whatever content is in your memory, including content you may have deleted. That means you can easily move content around as well!
+
+7. :s - Substitute (Find and Replace)
+
+Let’s say you have some code refactoring to do. You’ve renamed a variable and want an easy way to change every occurrence. Use the substitute command!
+
+Type :s to begin your command. By default, it only applies to your selected line, so use :%s instead to substitute all occurrences in the file. Then, type /foo/bar to substitute “foo” for “bar”. At the end, don’t forget to add /g to substitute globally for all occurrences on each line. You can also add c to the end to ask for confirmation upon each substitution.
+
+Your final command can look something like this:
+
+:%s/foo/bar/gc
+
+8. . - Repeat Last Command
+
+If you want to repeat the same command, just press the . key! That’s a lot easier than having to retype your last command, especially if it was long and complex.
+
+9. q – Macros
+
+What if you want to repeat a series of commands later and multiple times in your editing? You can save a macro!
+
+Type qa to start recording macro a. Then, type a to stop recording the macro.
+
+Now, you can run your macro with @a. If you have multiple macros, you can also type @@ to run your last one!
+
+10. :x - Write and Quit
+
+Finally, you can save and exit with a single command! Instead of typing :w to write to file and :q to quit just type :x to do both!
+
+Conclusion
+
+Share your favourite Vim commands in the comments below!
+
+And stay tuned to The FOSS Albatross to learn more about how you can make Vim your ultimate text editor and even a feature-packed IDE!

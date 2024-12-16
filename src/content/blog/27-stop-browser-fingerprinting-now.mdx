@@ -1,0 +1,128 @@
+---
+title: 'Stop Browser Fingerprinting Now'
+description: 'Welcome to The FOSS Albatross, a blog focused on building exposure around free and open-source software!'
+pubDate: 'May 06 2022'
+heroImage: '../../assets/images/0-welcome-to-the-foss-albatross-1.webp'
+category: 'Linux'
+tags: ['', '', '', '', '']
+---
+
+Stop Browser Fingerprinting Now
+
+Every time you open your browser to surf the Internet, you leave behind a unique trace. This identifiable mark is your browser fingerprint, which is used by websites and the big tech companies behind them to track your activity!
+
+What Is in Your Browser Fingerprint?
+
+A website can collect vast information about your browser, device, and Internet connection!
+
+One of many great websites to check your browser fingerprint is deviceinfo.me. [https://www.deviceinfo.me/] I highly encourage you to try it right now!
+
+The Device Info website shows an extensive list of information it can gather simply from being loaded in your browser. Information including which browser you use, which operating system you run, the hardware specifications of your device, and your IP address are easily collected!
+
+This combination of information is unlikely to be duplicated by another user and so can be used to track you! A single website can determine how many times you make a visit. A big tech company may also collect this information from multiple websites to correlate your activity across several services.
+
+Through browser fingerprinting, big tech companies no longer need to rely on older and more well-known methods such as collecting browser history or storing cookies to track your activity! Since most users are not aware of their browser fingerprint, big tech companies can freely gather data to use for algorithm training, targeted advertising, and many other purposes!
+
+How To Limit Your Browser Fingerprint
+
+Fortunately, you can prevent a website from accessing some of the information used for fingerprinting while some other pieces can be spoofed!
+
+What a VPN Can and Cannot Do
+
+To start, your IP address can be changed using a VPN, proxies, or Tor. Through these methods, a website loses access to an important unique identifier and the information that can be derived from it, such as your location and your ISP! Check out our article on VPNs here!
+
+However, just changing your connection to go through a VPN, proxies, or even the Tor network does not guarantee anonymity. There are plenty of other identifiers that can be used to track you such as your user agent, which contains your device type, operating system name and version, browser name and version, engine name and version, engine details, and sometimes other information!
+
+You will need to take additional steps at the browser level to improve your anonymity by limiting your browser fingerprint, such as using the Tor Browser or another option as will be discussed later in this article!
+
+Anti-Fingerprinting With RFP
+
+RFP [https://wiki.mozilla.org/Security/Fingerprinting] is an anti-fingerprinting solution created by the Tor Uplift Project. The Tor Uplift project creates enhancements for Firefox with the goal of achieving privacy and security closer to that offered by the Tor Browser. RFP specifically consists of a series of techniques to make users look identical by addressing many pieces of information used in fingerprinting!
+
+A few notable techniques used by RFP include obscuring screen coordinates, rounding window dimensions to a multiple of 200x100 and only allowing certain fonts. Plus, RFP can spoof all your following information:
+
+Media devices
+
+Keyboard layout
+
+Locale (to en-US)
+
+Date input field and date picker panel (to en-US)
+
+Pointer event
+
+Timezone (to UTC)
+
+Screen orientation
+
+RFP does much more as well – far too much to explain in this article! As such, I highly recommend reading the RFP documentation linked above.
+
+Get Started With LibreWolf!
+
+LibreWolf [https://librewolf.net/] is a browser forked from Firefox that focuses on privacy and security. LibreWolf is developed as a FOSS project independent of Firefox, so it is free to make many enhancements to the user experience!
+
+Most noticeably, many annoyances of Firefox are removed! Say a jolly goodbye to the following:
+
+Search and form history
+
+Form autofill
+
+Pop-up windows and automatic resizing
+
+Media autoplay
+
+Search suggestions and ads in the urlbar
+
+Distracting and sponsored content in the home page
+
+Pocket
+
+Mozilla VPN ads
+
+Firefox Sync (unless explicitly enabled)
+
+Extension recommendations
+
+Google Safe Browsing
+
+DRM (Digital Rights Management)
+
+Built-In Password Manager
+
+Furthermore, you can rest assured that telemetry and data collection have been removed! That means no more submitting crash reports, sending the success/failure run rate, running studies, and showing personalized recommendations.
+
+LibreWolf enables RFP and goes a few steps further with additional privacy and security enhancements! Here are some highlights:
+
+Delete cookies and website data on close
+
+uBlockOrigin by default
+
+Tracking protection in strict mode by default
+
+Strip tracking elements from URLs
+
+dFPI, also known as Total Cookie Protection
+
+Disable WebGL, a strong fingerprinting vector
+
+Disable disk cache and clear temporary files on close
+
+HTTPS-only mode by default
+
+Always force user interaction for download location
+
+For the full list of features, check out the documentation here! [https://librewolf.net/docs/features/]
+
+LibreWolf does its best to stay up to date with Firefox as well, with updates usually made within an impressive three days of each upstream stable release!
+
+With all that being said, LibreWolf does come with some inconveniences – these are sacrifices we must make for improved privacy and security. Some notable disadvantages include forced light theme as well as a smaller and fixed window size on startup. Another disadvantage is striped or blocked-out images due to a website requiring canvas access, which is disabled by RFP. Fortunately, you can enable canvas access for an individual site by clicking the picture frame icon in the top bar.
+
+Considering the overall benefits of using LibreWolf to counter browser fingerprinting among other potential privacy and security threats, it is a solid browser choice and my recommendation for a default browser! You can support an amazing FOSS project as well, which is one of the few browsers out there not based on Chrome/Chromium! Check out our article on Google’s domination here.
+
+I have been using LibreWolf as my default browser, and I am very happy with its experience! I can sometimes see the benefits when I run browser fingerprinting tests or use a website that really thinks I am running Windows 10 or am operating on UTC.
+
+I rarely run into any problems, and I have gotten used to the quirks I first saw as inconveniences. Plus, these quirks hardly compare to the exhausting process of massively changing settings in stock Firefox or other browsers like Chrome before I feel comfortable using them.
+
+Now that you know about your browser fingerprint, you need to take action! Install LibreWolf and start browsing more privately and securely now!
+
+Stay tuned to hear more about other privacy and security browser such as Brave and on Android, Mull and Bromite!
