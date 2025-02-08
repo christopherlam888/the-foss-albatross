@@ -1,17 +1,15 @@
 ---
 title: '5 Steps To Set Up Your New Sway Desktop'
-description: 'Welcome to The FOSS Albatross, a blog focused on building exposure around free and open-source software!'
-pubDate: 'May 06 2022'
+description: 'So you want to get started using the Sway tiling window manager! Unfortunately, many of...'
+pubDate: 'Jan 13 2023'
 heroImage: '../../assets/images/0-welcome-to-the-foss-albatross-1.webp'
 category: 'Linux'
-tags: ['', '', '', '', '']
+tags: ['Technology', 'Software', 'Linux', 'Open Source', 'Sway']
 ---
-
-5 Steps To Set Up Your New Sway Desktop
 
 So you want to get started using the Sway tiling window manager! Unfortunately, many of the functions we often take for granted don’t work right out of the box on a vanilla installation. Here are 5 essential steps to help you set up your new Sway desktop!
 
-Keybindings
+## Keybindings
 
 Take full advantage of using a tiling window manager by setting your keybindings!
 
@@ -31,7 +29,7 @@ You can edit the existing keybindings and write your own to suit your unique wor
 
 Some of my most used keybindings include $mod+Return for a terminal, $mod+d for dmenu, $mod+w for LibreWolf, $mod+b for Brave, $mod+n for Nautilus, and $mod+p for Proton VPN. Of course, there are many keybindings for switching windows and workspaces plus many other tasks as well.
 
-Bar
+## Bar
 
 The default top bar in Sway is Swaybar and it is quite plain and lacklustre. Of course, you can customize Swaybar to your liking, but the ease with which you can customize it as well as the extent to which you can do so is limited.
 
@@ -47,7 +45,7 @@ You can change display info, format, font, colour, and so much more!
 
 Learn about all you can do with Waybar in the wiki here. https://github.com/Alexays/Waybar/wiki
 
-Volume Control
+## Volume Control
 
 If you want to listen to music or watch videos with your new setup, you need to be able to control your volume!
 
@@ -75,7 +73,7 @@ bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 Feel free to change the increment and decrement percentages depending on your liking!
 
-Brightness Control
+## Brightness Control
 
 Depending on whether you’re working in bright or low-light conditions, you may want to adjust your screen’s brightness.
 
@@ -101,7 +99,7 @@ Edit your sudoers file with the command sudo visudo. Then, add the following lin
 
 user ALL = NOPASSWD: /bin/brightnessctl
 
-Screenshot
+## Screenshot
 
 Unfortunately, taking a screenshot in Sway is not nearly as simple as opening an application and following the GUI like in most desktop environments. But here is how you can write a simple script to make it essentially that easy!
 
@@ -127,7 +125,7 @@ sudo chmod +x screenshot.sh
 
 Now, you can easily take screenshots by running this script from dmenu!
 
-More!
+## More!
 
 There are nearly limitless possibilities to customize your setup beyond these 5 simple steps! Check out the Sway wiki here. https://github.com/Alexays/Waybar/wiki
 
